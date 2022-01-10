@@ -15,4 +15,4 @@ ENV PUID 1000
 EXPOSE 8766/udp
 EXPOSE 16261/udp
 
-ENTRYPOINT [ "/bin/bash", "/home/steam/gameserver/start-server.sh"]
+ENTRYPOINT [ "/bin/bash", "/home/steam/gameserver/start-server.sh -adminpassword $ADMIN_PASS"]
