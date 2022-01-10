@@ -1,6 +1,5 @@
-FROM steamcmd/steamcmd:centos
+FROM rpufky/steam:stable
 
-RUN yum -y install curl wget tar bzip2 gzip unzip python3 binutils bc jq tmux glibc.i686 libstdc++ libstdc++.i686
 
 RUN mkdir /gameserver && \
     steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /gameserver +login anonymous +app_update 380870 validate +quit
@@ -10,7 +9,9 @@ WORKDIR /gameserver
 
 RUN chown -R 1000:1000 /gameserver/
 
-RUN find / -name start-server.sh
+RUN ls /gameserver/
+
+RUN ls /gameserver/*
 
 # Run as a non-root user by default
 ENV PGID 1000
