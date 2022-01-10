@@ -17,4 +17,4 @@ EXPOSE 16261/udp
 
 ENV ADMIN_PASS="temp"
 
-ENTRYPOINT [ "/bin/bash", "/home/steam/gameserver/start-server.sh -adminpassword $ADMIN_PASS"]
+ENTRYPOINT [ "sh", "-c", "/home/steam/gameserver/start-server.sh -adminpassword $ADMIN_PASS"]
