@@ -8,7 +8,7 @@ RUN ls /home/steam/Steam
 
 RUN ls /home/steam/steamcmd
 
-RUN /home/steam/steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit
+RUN /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit
 
 # Set the current working directory
 #WORKDIR /gameserver
