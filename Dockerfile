@@ -9,11 +9,11 @@ RUN /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_i
 
 RUN chown -R 1000:1000 /home/steam/gameserver/
 
-RUN ls -lta /home/steam/gameserver/
+RUN ls -lrta /home/steam/gameserver/
 
-RUN ls -lta /home/steam/gameserver/*
+RUN ls -lrta /home/steam/gameserver/*
 
-RUN ls -lta /home/steam/gameserver/jre/zombie
+RUN ls -lrta /home/steam/gameserver/java/zombie
 
 # Run as a non-root user by default
 ENV PGID 1000
