@@ -5,7 +5,9 @@ RUN /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_i
 RUN chown -R 1000:1000 /home/steam/gameserver/
 
 #The game save data is in /home/steam/gameserver/java/zombie/savefile - I will be mounting a PVC here
-RUN rm -rf /home/steam/gameserver/java/zombie/savefile/*
+#RUN rm -rf /home/steam/gameserver/java/zombie/savefile/*
+
+RUN find / -name "Zomboid"
 
 # Run as a non-root user by default
 ENV PGID 1000
