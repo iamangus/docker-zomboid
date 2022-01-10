@@ -4,7 +4,11 @@ RUN /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_i
 
 RUN chown -R 1000:1000 /home/steam/gameserver/
 
-#This is the game save /home/steam/gameserver/java/zombie
+RUN ls -ltra /home/steam/gameserver/java/zombie
+
+RUN ls -ltra /home/steam/gameserver/java/zombie/*
+
+#The game save data is in /home/steam/gameserver/java/zombie
 
 # Run as a non-root user by default
 ENV PGID 1000
