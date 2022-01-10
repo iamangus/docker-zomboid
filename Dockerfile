@@ -16,4 +16,4 @@ EXPOSE 16261/udp
 
 ENV ADMIN_PASS="temp"
 
-ENTRYPOINT [ "sh", "-c", "/home/steam/gameserver/start-server.sh -adminpassword $ADMIN_PASS"]
+ENTRYPOINT [ "sh", "-c", "/home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit && /home/steam/gameserver/start-server.sh -adminpassword $ADMIN_PASS"]
