@@ -1,16 +1,17 @@
 FROM cm2network/steamcmd
 
-RUN sudo mkdir /gameserver && \
-    steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /gameserver +login anonymous +app_update 380870 validate +quit
+#sudo mkdir /gameserver && \
+
+RUN /home/steam/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit
 
 # Set the current working directory
-WORKDIR /gameserver
+#WORKDIR /gameserver
 
-RUN chown -R 1000:1000 /gameserver/
+RUN chown -R 1000:1000 /home/steam/gameserver/
 
-RUN ls /gameserver/
+RUN ls /home/steam/gameserver/
 
-RUN ls /gameserver/*
+RUN ls /home/steam/gameserver/*
 
 # Run as a non-root user by default
 ENV PGID 1000
@@ -20,4 +21,4 @@ ENV PUID 1000
 EXPOSE 8766/udp
 EXPOSE 16261/udp
 
-ENTRYPOINT [ "/bin/bash", "/gameserver/start-server.sh"]
+ENTRYPOINT [ "/bin/bash", "/home/steam/gameserver/start-server.sh"]
