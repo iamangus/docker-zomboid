@@ -1,6 +1,6 @@
 FROM steamcmd/steamcmd:centos
 
-RUN yum -y install curl wget tar bzip2 gzip unzip python3 binutils bc jq tmux glibc.i686 libstdc++ libstdc++.i686 libsdl2-2.0-0:i386
+RUN yum -y install curl wget tar bzip2 gzip unzip python3 binutils bc jq tmux glibc.i686 libstdc++ libstdc++.i686 libsdl2-2.0-0.i386
 
 RUN mkdir /gameserver && \
     steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /gameserver +login anonymous +app_update 380870 validate +quit
