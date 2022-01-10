@@ -1,4 +1,4 @@
-FROM rpufky/steam:stable
+FROM steamcmd:latest
 
 
 RUN mkdir /gameserver && \
