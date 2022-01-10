@@ -20,4 +20,4 @@ ENV PUID 1000
 EXPOSE 8766/udp
 EXPOSE 16261/udp
 
-ENTRYPOINT [ "/bin/bash", "/gameserver/steam/steamapps/common/Project\ Zomboid\ Dedicated\ Server\/start-server.sh"]
+ENTRYPOINT [ "/bin/bash", "/gameserver/start-server.sh"]
