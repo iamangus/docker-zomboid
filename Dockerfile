@@ -4,9 +4,9 @@ FROM cm2network/steamcmd
 
 RUN ls /
 
-RUN ls /home/
+RUN ls /home/steam/Steam
 
-RUN ls /home/steam/
+RUN ls /home/steam/steamcmd
 
 RUN /home/steam/steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit
 
