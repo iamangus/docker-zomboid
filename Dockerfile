@@ -2,7 +2,7 @@ FROM cm2network/steamcmd
 
 RUN /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit
 
-RUN chown -R 1000:1000 /home/steam
+#RUN chown -R 1000:1000 /home/steam
 
 #Despite forcing install to /home/steam/gameserver, the save location is under /home/steam/Zomboid/Saves
 
@@ -16,4 +16,4 @@ EXPOSE 16261/udp
 
 ENV ADMIN_PASS="temp"
 
-ENTRYPOINT [ "sh", "-c", "/home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit && /home/steam/gameserver/start-server.sh -adminpassword $ADMIN_PASS"]
+ENTRYPOINT [ "sh", "-c", "/home/steam/gameserver/start-server.sh -adminpassword $ADMIN_PASS"]
