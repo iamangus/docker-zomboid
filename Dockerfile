@@ -2,6 +2,12 @@ FROM cm2network/steamcmd
 
 #sudo mkdir /gameserver && \
 
+RUN ls /
+
+RUN ls /home/
+
+RUN ls /home/steam/
+
 RUN /home/steam/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/gameserver +login anonymous +app_update 380870 validate +quit
 
 # Set the current working directory
